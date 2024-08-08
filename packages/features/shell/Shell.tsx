@@ -609,6 +609,7 @@ const navigation: NavigationItemType[] = [
     onlyDesktop: true,
     badge: <TeamInviteBadge />,
   },
+  /** 
   {
     name: "apps",
     href: "/apps",
@@ -654,7 +655,7 @@ const navigation: NavigationItemType[] = [
     name: "workflows",
     href: "/workflows",
     icon: "zap",
-  },
+  },**/
   {
     name: "insights",
     href: "/insights",

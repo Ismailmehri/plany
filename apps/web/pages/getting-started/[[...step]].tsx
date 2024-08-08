@@ -15,8 +15,6 @@ import { Button, StepCard, Steps } from "@calcom/ui";
 import { Icon } from "@calcom/ui";
 
 import PageWrapper from "@components/PageWrapper";
-import { ConnectedCalendars } from "@components/getting-started/steps-views/ConnectCalendars";
-import { ConnectedVideoStep } from "@components/getting-started/steps-views/ConnectedVideoStep";
 import { SetupAvailability } from "@components/getting-started/steps-views/SetupAvailability";
 import UserProfile from "@components/getting-started/steps-views/UserProfile";
 import { UserSettings } from "@components/getting-started/steps-views/UserSettings";
@@ -26,8 +24,8 @@ export { getServerSideProps } from "@lib/getting-started/[[...step]]/getServerSi
 const INITIAL_STEP = "user-settings";
 const steps = [
   "user-settings",
-  "connected-calendar",
-  "connected-video",
+  //"connected-calendar",
+  //"connected-video",
   "setup-availability",
   "user-profile",
 ] as const;
@@ -102,6 +100,7 @@ const OnboardingPage = () => {
 
   const goToIndex = (index: number) => {
     const newStep = steps[index];
+    console.log(newStep);
     router.push(`/getting-started/${stepTransform(newStep)}`);
   };
 
@@ -144,13 +143,10 @@ const OnboardingPage = () => {
                 {currentStep === "user-settings" && (
                   <UserSettings nextStep={() => goToIndex(1)} hideUsername={from === "signup"} />
                 )}
-                {currentStep === "connected-calendar" && <ConnectedCalendars nextStep={() => goToIndex(2)} />}
-
-                {currentStep === "connected-video" && <ConnectedVideoStep nextStep={() => goToIndex(3)} />}
 
                 {currentStep === "setup-availability" && (
                   <SetupAvailability
-                    nextStep={() => goToIndex(4)}
+                    nextStep={() => goToIndex(2)}
                     defaultScheduleId={user.defaultScheduleId}
                   />
                 )}
