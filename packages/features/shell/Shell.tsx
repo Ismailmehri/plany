@@ -40,11 +40,8 @@ import VerifyEmailBanner, {
 import classNames from "@calcom/lib/classNames";
 import {
   APP_NAME,
-  DESKTOP_APP_LINK,
   ENABLE_PROFILE_SWITCHER,
   IS_VISUAL_REGRESSION_TESTING,
-  JOIN_COMMUNITY,
-  ROADMAP,
   TOP_BANNER_HEIGHT,
   WEBAPP_URL,
 } from "@calcom/lib/constants";
@@ -503,43 +500,6 @@ function UserDropdown({ small }: UserDropdownProps) {
                     <DropdownMenuSeparator />
                   </>
                 )}
-
-                <DropdownMenuItem>
-                  <DropdownItem
-                    StartIcon="messages-square"
-                    target="_blank"
-                    rel="noreferrer"
-                    href={JOIN_COMMUNITY}>
-                    {t("join_our_community")}
-                  </DropdownItem>
-                </DropdownMenuItem>
-                <DropdownMenuItem>
-                  <DropdownItem StartIcon="map" target="_blank" href={ROADMAP}>
-                    {t("visit_roadmap")}
-                  </DropdownItem>
-                </DropdownMenuItem>
-                <DropdownMenuItem>
-                  <DropdownItem
-                    type="button"
-                    StartIcon="circle-help"
-                    aria-hidden="true"
-                    onClick={() => setHelpOpen(true)}>
-                    {t("help")}
-                  </DropdownItem>
-                </DropdownMenuItem>
-                {!isPlatformUser && (
-                  <DropdownMenuItem className="todesktop:hidden hidden lg:flex">
-                    <DropdownItem
-                      StartIcon="download"
-                      target="_blank"
-                      rel="noreferrer"
-                      href={DESKTOP_APP_LINK}>
-                      {t("download_desktop_app")}
-                    </DropdownItem>
-                  </DropdownMenuItem>
-                )}
-
-                <DropdownMenuSeparator />
 
                 <DropdownMenuItem>
                   <DropdownItem
@@ -1024,7 +984,6 @@ function SideBar({ bannersHeight, user, isPlatformUser = false }: SideBarProps) 
 
         {!isPlatformUser && (
           <div>
-            <Tips />
             {bottomNavItems.map((item, index) => (
               <Tooltip side="right" content={t(item.name)} className="lg:hidden" key={item.name}>
                 <ButtonOrLink

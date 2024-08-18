@@ -15,8 +15,8 @@ const nextConfig = {
     ];
   },
   i18n: {
-    defaultLocale: "en",
-    locales: ["en"],
+    defaultLocale: "fr",
+    locales: ["fr"],
   },
   reactStrictMode: true,
 };
