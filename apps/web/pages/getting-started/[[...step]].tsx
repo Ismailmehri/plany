@@ -1,5 +1,3 @@
-"use client";
-
 import { signOut } from "next-auth/react";
 import Head from "next/head";
 import { usePathname, useRouter } from "next/navigation";
@@ -72,7 +70,6 @@ const OnboardingPage = () => {
 
   const goToIndex = (index: number) => {
     const newStep = steps[index];
-    console.log(newStep);
     router.push(`/getting-started/${stepTransform(newStep)}`);
   };
 
@@ -124,21 +121,6 @@ const OnboardingPage = () => {
                 {currentStep === "user-profile" && <UserProfile />}
               </Suspense>
             </StepCard>
-
-            {headers[currentStepIndex]?.skipText && (
-              <div className="flex w-full flex-row justify-center">
-                <Button
-                  color="minimal"
-                  data-testid="skip-step"
-                  onClick={(event) => {
-                    event.preventDefault();
-                    goToIndex(currentStepIndex + 1);
-                  }}
-                  className="mt-8 cursor-pointer px-4 py-2 font-sans text-sm font-medium">
-                  {headers[currentStepIndex]?.skipText}
-                </Button>
-              </div>
-            )}
           </div>
           <div className="flex w-full flex-row justify-center">
             <Button

@@ -15,7 +15,7 @@ export default function MaintenancePage() {
       <div className="bg-default m-auto rounded-md p-10 text-right ltr:text-left">
         <h1 className="text-emphasis text-2xl font-medium">Down for maintenance</h1>
         <p className="text-default mb-6 mt-4 max-w-2xl text-sm">
-          The Cal.com team are performing scheduled maintenance. If you have any questions, please contact
+          The Plany team are performing scheduled maintenance. If you have any questions, please contact
           support.
         </p>
         <Button href={`${WEBSITE_URL}/support`}>Contact Support</Button>
