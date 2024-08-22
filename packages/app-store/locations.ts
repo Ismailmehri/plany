@@ -87,7 +87,7 @@ export const defaultLocations: DefaultEventLocationType[] = [
     label: "in_person_attendee_address",
     variable: "address",
     organizerInputType: null,
-    messageForOrganizer: "Cal will ask your invitee to enter an address before scheduling.",
+    messageForOrganizer: "Plany demandera à votre invité de saisir une adresse avant de planifier.",
     attendeeInputType: "attendeeAddress",
     attendeeInputPlaceholder: "enter_address",
     defaultValueVariable: "attendeeAddress",
@@ -99,8 +99,7 @@ export const defaultLocations: DefaultEventLocationType[] = [
     type: DefaultEventLocationTypeEnum.InPerson,
     label: "in_person",
     organizerInputType: "text",
-    messageForOrganizer: "Provide an Address or Place",
-    // HACK:
+    messageForOrganizer: "Fournissez une adresse ou un lieu",
     variable: "locationAddress",
     defaultValueVariable: "address",
     iconUrl: "/map-pin-dark.svg",
@@ -123,7 +122,7 @@ export const defaultLocations: DefaultEventLocationType[] = [
     label: "link_meeting",
     organizerInputType: "text",
     variable: "locationLink",
-    messageForOrganizer: "Provide a Meeting Link",
+    messageForOrganizer: "Fournissez un lien de réunion",
     defaultValueVariable: "link",
     iconUrl: "/link.svg",
     category: "other",
@@ -135,11 +134,10 @@ export const defaultLocations: DefaultEventLocationType[] = [
     variable: "phone",
     organizerInputType: null,
     attendeeInputType: "phone",
-    attendeeInputPlaceholder: `enter_phone_number`,
+    attendeeInputPlaceholder: "enter_phone_number",
     defaultValueVariable: "phone",
-    messageForOrganizer: "Cal will ask your invitee to enter a phone number before scheduling.",
-    // This isn't inputType phone because organizer doesn't need to provide it.
-    // inputType: "phone"
+    messageForOrganizer:
+      "Plany demandera à votre invité de saisir un numéro de téléphone avant de planifier.",
     iconUrl: "/phone.svg",
     category: "phone",
   },
@@ -147,7 +145,7 @@ export const defaultLocations: DefaultEventLocationType[] = [
     default: true,
     type: DefaultEventLocationTypeEnum.UserPhone,
     label: "organizer_phone_number",
-    messageForOrganizer: "Provide your phone number",
+    messageForOrganizer: "Fournissez votre numéro de téléphone",
     organizerInputType: "phone",
     variable: "locationPhoneNumber",
     defaultValueVariable: "hostPhoneNumber",
@@ -283,7 +281,7 @@ export const getMessageForOrganizer = (location: string, t: TFunction) => {
     return t(defaultLocation.messageForOrganizer);
   }
   if (videoLocation && videoLocation.linkType !== "static" && videoLocation.type !== "integrations:zoom") {
-    return t(`Cal will provide a ${videoLocation.label} URL.`);
+    return t(`Plany will provide a ${videoLocation.label} URL.`);
   }
   return "";
 };

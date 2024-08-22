@@ -1,8 +1,6 @@
 import { ErrorMessage } from "@hookform/error-message";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { isValidPhoneNumber } from "libphonenumber-js";
-import { Trans } from "next-i18next";
-import Link from "next/link";
 import { useEffect } from "react";
 import { Controller, useForm, useWatch, useFormContext } from "react-hook-form";
 import { z } from "zod";
@@ -242,19 +240,6 @@ export const EditLocationDialog = (props: ISetLocationDialog) => {
               <h3 className="text-emphasis text-lg font-medium leading-6" id="modal-title">
                 {t("edit_location")}
               </h3>
-              {!booking && (
-                <p className="text-default text-sm">
-                  <Trans i18nKey="cant_find_the_right_conferencing_app_visit_our_app_store">
-                    Can&apos;t find the right conferencing app? Visit our
-                    <Link
-                      className="cursor-pointer text-blue-500 underline"
-                      href="/apps/categories/conferencing">
-                      App Store
-                    </Link>
-                    .
-                  </Trans>
-                </p>
-              )}
             </div>
             <div className="mt-3 text-center sm:mt-0 sm:text-left" />
 
