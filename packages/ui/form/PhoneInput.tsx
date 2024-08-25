@@ -18,19 +18,27 @@ export type PhoneInputProps = {
 };
 
 function BasePhoneInput({ name, className = "", onChange, value, ...rest }: PhoneInputProps) {
+  const [defaultCountry, setDefaultCountry] = useState("tn"); // Code pays par défaut
+
+  useEffect(() => {
+    setDefaultCountry("tn"); // Définit le code pays par défaut
+  }, []);
+
   return (
     <PhoneInput
       {...rest}
       value={value ? value.trim().replace(/^\+?/, "+") : undefined}
       enableSearch
       disableSearchIcon
+      onChange={(value) => {
+        onChange(`+${value}`);
+      }}
+      country={defaultCountry} // Code pays par défaut
       inputProps={{
         name: name,
         required: rest.required,
         placeholder: rest.placeholder,
-      }}
-      onChange={(value) => {
-        onChange(`+${value}`);
+        disabled: rest.disabled, // Désactive le champ si `disabled` est true
       }}
       containerClass={classNames(
         "hover:border-emphasis dark:focus:border-emphasis border-default !bg-default rounded-md border focus-within:outline-none focus-within:ring-2 focus-within:ring-brand-default disabled:cursor-not-allowed",
@@ -52,12 +60,13 @@ function BasePhoneInput({ name, className = "", onChange, value, ...rest }: Phon
         marginLeft: "-4px",
       }}
       dropdownStyle={{ width: "max-content" }}
+      disabled // Désactive le sélecteur de pays
     />
   );
 }
 
 const useDefaultCountry = () => {
-  const [defaultCountry, setDefaultCountry] = useState("us");
+  const [defaultCountry, setDefaultCountry] = useState("tn"); // Code pays par défaut
   const query = trpc.viewer.public.countryCode.useQuery(undefined, {
     refetchOnWindowFocus: false,
     refetchOnReconnect: false,
@@ -73,7 +82,7 @@ const useDefaultCountry = () => {
 
       isSupportedCountry(data?.countryCode)
         ? setDefaultCountry(data.countryCode.toLowerCase())
-        : setDefaultCountry(navigator.language.split("-")[1]?.toLowerCase() || "us");
+        : setDefaultCountry(navigator.language.split("-")[1]?.toLowerCase() || "tn");
     },
     [query.data]
   );

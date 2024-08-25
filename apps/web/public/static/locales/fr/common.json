@@ -1541,6 +1541,8 @@
   "report_app": "Signaler l'application",
   "limit_booking_frequency": "Limiter la fréquence de réservation",
   "limit_booking_frequency_description": "Limitez le nombre de réservations possibles pour cet événement.",
+  "only_show_first_available_slot" : "Afficher uniquement le premier créneau de chaque jour comme disponible",
+  "only_show_first_available_slot_description" : "Cela limitera votre disponibilité pour ce type d'événement à un créneau par jour, programmé au premier horaire disponible.",
   "limit_total_booking_duration": "Limiter la durée totale de réservation",
   "limit_total_booking_duration_description": "Limitez la durée totale pendant laquelle cet événement peut être réservé.",
   "add_limit": "Ajouter une limite",
