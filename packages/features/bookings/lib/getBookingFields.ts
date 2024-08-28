@@ -133,6 +133,22 @@ export const ensureBookingInputsHaveSystemFields = ({
   // These fields should be added before other user fields
   const systemBeforeFields: typeof bookingFields = [
     {
+      type: "phone",
+      // This is the `name` of the main field
+      name: "phone",
+      editable: "system-but-optional",
+      // This Label is used in Email only as of now.
+      defaultLabel: "your_phone_number",
+      required: true,
+      sources: [
+        {
+          label: "Default",
+          id: "default",
+          type: "default",
+        },
+      ],
+    },
+    {
       type: "name",
       // This is the `name` of the main field
       name: "name",

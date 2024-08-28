@@ -97,19 +97,6 @@ function getNavigation({
       icon: "sliders-vertical",
       info: `event_advanced_tab_description`,
     },
-    {
-      name: "apps",
-      href: `/event-types/${id}?tabName=apps`,
-      icon: "grid-3x3",
-      //TODO: Handle proper translation with count handling
-      info: `${installedAppsNumber} apps, ${enabledAppsNumber} ${t("active")}`,
-    },
-    {
-      name: "workflows",
-      href: `/event-types/${id}?tabName=workflows`,
-      icon: "zap",
-      info: `${enabledWorkflowsNumber} ${t("active")}`,
-    },
   ] satisfies VerticalTabItemProps[];
 }
 
@@ -280,15 +267,6 @@ function EventTypeSingleLayout({
         href: `/event-types/${formMethods.getValues("id")}?tabName=webhooks`,
         icon: "webhook",
         info: `${activeWebhooksNumber} ${t("active")}`,
-      });
-    }
-    const hidden = true; // hidden while in alpha trial. you can access it with tabName=ai
-    if (team && hidden) {
-      navigation.push({
-        name: "Cal.ai",
-        href: `/event-types/${eventType.id}?tabName=ai`,
-        icon: "sparkles",
-        info: "cal_ai_event_tab_description", // todo `cal_ai_event_tab_description`,
       });
     }
     return navigation;
