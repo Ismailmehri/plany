@@ -649,24 +649,6 @@ const platformNavigation: NavigationItemType[] = [
     icon: "layout-dashboard",
   },
   {
-    name: "Documentation",
-    href: "https://docs.cal.com/docs/platform",
-    icon: "chart-bar",
-    target: "_blank",
-  },
-  {
-    name: "API reference",
-    href: "https://api.cal.com/v2/docs#/",
-    icon: "terminal",
-    target: "_blank",
-  },
-  {
-    name: "Atoms",
-    href: "https://docs.cal.com/docs/platform#atoms",
-    icon: "atom",
-    target: "_blank",
-  },
-  {
     name: MORE_SEPARATOR_NAME,
     href: "https://docs.cal.com/docs/platform/faq",
     icon: "ellipsis",
