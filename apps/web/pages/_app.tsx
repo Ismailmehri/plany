@@ -6,7 +6,7 @@ import React from "react";
 import { trpc } from "@calcom/trpc/react";
 
 import type { AppProps } from "@lib/app-providers";
-import { initGTM } from "@lib/gtm.ts";
+import { initGTM } from "@lib/gtm";
 
 import "../styles/globals.css";
 
