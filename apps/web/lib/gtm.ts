@@ -1,7 +1,5 @@
-import { NEXT_PUBLIC_GTM_ID } from "@calcom/lib/constants";
-
 export const initGTM = () => {
-  const gtmId = NEXT_PUBLIC_GTM_ID;
+  const gtmId = "GTM-NLVDRV7V";
 
   if (!gtmId) {
     console.warn("Google Tag Manager ID is not defined.");
