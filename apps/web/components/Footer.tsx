@@ -1,39 +1,39 @@
 import Link from "next/link";
 
 const Footer = () => {
-  const footerStyle = {
+  const footerStyle: React.CSSProperties = {
     backgroundColor: "#1a1a1a",
     color: "#fff",
     padding: "20px 10%",
-    textAlign: "center",
+    textAlign: "center" as React.CSSProperties["textAlign"], // Type assertion for textAlign
   };
 
-  const sectionStyle = {
+  const sectionStyle: React.CSSProperties = {
     display: "flex",
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
     width: "100%",
     maxWidth: "1200px",
-    margin: "0 auto", // Centrer le footer sur la page
-    flexWrap: "wrap", // Permet aux éléments de passer à la ligne sur mobile
+    margin: "0 auto",
+    flexWrap: "wrap",
   };
 
-  const columnStyle = {
+  const columnStyle: React.CSSProperties = {
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
-    flex: "1 1 200px", // Permet aux colonnes de s'étendre ou de se rétrécir
-    margin: "10px", // Espacement entre les colonnes
+    flex: "1 1 200px",
+    margin: "10px",
   };
 
-  const linkStyle = {
+  const linkStyle: React.CSSProperties = {
     color: "#fff",
     textDecoration: "none",
-    margin: "5px 0", // Espacement vertical entre les liens
+    margin: "5px 0",
   };
 
-  const logoStyle = {
+  const logoStyle: React.CSSProperties = {
     width: "30px",
     height: "30px",
     margin: "0 5px",
