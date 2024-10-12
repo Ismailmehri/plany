@@ -8,6 +8,8 @@ import { trpc } from "@calcom/trpc/react";
 import type { AppProps } from "@lib/app-providers";
 import { initGTM } from "@lib/gtm";
 
+import Footer from "../components/Footer";
+// Import du composant Footer
 import "../styles/globals.css";
 
 function MyApp(props: AppProps) {
@@ -17,8 +19,21 @@ function MyApp(props: AppProps) {
     initGTM();
   }, []);
 
-  if (Component.PageWrapper !== undefined) return Component.PageWrapper(props);
-  return <Component {...pageProps} />;
+  if (Component.PageWrapper !== undefined) {
+    return (
+      <>
+        {Component.PageWrapper(props)}
+        <Footer />
+      </>
+    );
+  }
+
+  return (
+    <>
+      <Component {...pageProps} />
+      <Footer />
+    </>
+  );
 }
 
 declare global {
